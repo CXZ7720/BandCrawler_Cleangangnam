@@ -1,6 +1,7 @@
 import bandCrawler as bc
 import parseAddress as parse
 import db
+import telegram
 
 
 def main():
@@ -21,9 +22,10 @@ def main():
         else:  # 새글일 경우
             print("Add to DB")
             db.insertPost(postkey, createdate)
-
-            parsed_address = parse.parseAddress(temp['content'])  # 정규표현식에 의한 주소 파싱
-
+            print(temp['content'])
+            parsed_address = parse.parseAddress(temp['content'])  # 정규표현식에 의한 주소 파싱(str)
+            print(parsed_address)
+            # telegram.sendMessage(parsed_address)
             # @TODO parsed_address를 이용한 kakao locla API 검색
             # @TODO 검색 결과를 카카오톡 API를 이용하여 전송
             # @TODO 전송 완료후 DB 1로 업데이트
