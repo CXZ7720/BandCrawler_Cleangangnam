@@ -18,3 +18,10 @@ def insertPost(postkey, createdate):
     db.cursor.execute(query)
 
     db.conn.commit()
+
+def afterSend():
+    query = "UPDATE BAND SET isAlert = 1;"
+    print(query)
+    db.cursor.execute(query)
+
+    db.conn.commit()

@@ -8,6 +8,7 @@ def getenv(file):
     env['db_usr'] = lines[1][:-1]
     env['db_pwd'] = lines[2][:-1]
     env['db_name'] = lines[3][:-1]
-    env['telegram_token'] = lines[4]
+    env['telegram_token'] = lines[4][:-1]
+    env['channel_id'] = lines[5]
 
     return env
