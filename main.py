@@ -24,13 +24,13 @@ def main():
             db.insertPost(postkey, createdate)
             print("본문내용 : " + temp['content'])
             parsed_address = parse.parseAddress(temp['content'])  # 정규표현식에 의한 주소 파싱(str)
-            print("주소파싱 결과 : " + parsed_address)
+            print("주소파싱 결과 : " + str(parsed_address))
             if (parsed_address != None):
                 print("파싱결과 - 고려환경 민원 확인!")
                 text = "<b>새로운 민원이 등록되었습니다!</b><br>" \
                        "작성자 : %s<br>" \
                        "등록일 : %s<br>" \
-                       "내용 : <br>%s" % (temp['author'], temp['createdate'], temp['content'])
+                       "내용 : <br>%s<br>" % (temp['author'], temp['createdate'], temp['content'])
                 bot.sendMessage(text)
                 db.afterSend()
             # @TODO parsed_address를 이용한 kakao locla API 검색
