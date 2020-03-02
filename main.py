@@ -13,6 +13,7 @@ def main():
         temp = bc.makeData(i)  # 1개의 처리 데이터를 임시로 딕셔너리 형태로 저장.
         postkey = temp.get('postkey')
         createdate = temp.get('createdate')
+        photos = temp.get('photos')
 
         # Postkey 로 DB를 조회하여 새로운 게시글인지 확인하여 글 개수를 리턴(새글 : 0, 이미 등록된 글 : 1)
         isExist = db.search_postkey(postkey)  # 0 || 1
@@ -27,12 +28,14 @@ def main():
             print("주소파싱 결과 : " + str(parsed_address))
             if (parsed_address != None):
                 print("파싱결과 - 고려환경 민원 확인!")
-                text = "<b>새로운 민원이 등록되었습니다!</b><br>" \
-                       "작성자 : %s<br>" \
-                       "등록일 : %s<br>" \
-                       "내용 : <br>%s<br>" % (temp['author'], temp['createdate'], temp['content'])
+                text = """<b>새로운 민원이 등록되었습니다!</b>\n<b>찾은 단어 : %s</b>\n\n<b>작성자 :</b> %s\n<b>등록일 :</b> %s\n<b>내용 :</b> \n%s\n""" \
+                       % (parsed_address, temp['author'], temp['createdate'], temp['content'])
                 bot.sendMessage(text)
-                db.afterSend()
+                if len(photos) > 0:
+                    for urls in photos:
+                        bot.sendImage(urls)
+
+                db.afterSend(postkey)
             # @TODO parsed_address를 이용한 kakao locla API 검색
             # @TODO 검색 결과를 카카오톡 API를 이용하여 전송
             # @TODO 전송 완료후 DB 1로 업데이트

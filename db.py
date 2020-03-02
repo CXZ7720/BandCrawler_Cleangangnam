@@ -19,8 +19,8 @@ def insertPost(postkey, createdate):
 
     db.conn.commit()
 
-def afterSend():
-    query = "UPDATE BAND SET isAlert = 1;"
+def afterSend(postkey: int):
+    query = "UPDATE Band SET isAlert = 1 WHERE post_id = '%s';" % (postkey)
     print(query)
     db.cursor.execute(query)
 
