@@ -31,10 +31,14 @@ def main():
                 text = """<b>새로운 민원이 등록되었습니다!</b>\n<b>찾은 단어 : %s</b>\n\n<b>작성자 :</b> %s\n<b>등록일 :</b> %s\n<b>내용 :</b> \n%s\n""" \
                        % (parsed_address, temp['author'], temp['createdate'], temp['content'])
                 bot.sendMessage(text)
+                print(photos)
                 if len(photos) > 0:
-                    for urls in photos:
-                        bot.sendImage(urls)
-
+                    try :
+                        for i in range(len(photos)):
+                            print(photos[i])
+                            bot.sendImage(photos[i])
+                    except:
+                        print("Timeout")
                 db.afterSend(postkey)
             # @TODO parsed_address를 이용한 kakao locla API 검색
             # @TODO 검색 결과를 카카오톡 API를 이용하여 전송

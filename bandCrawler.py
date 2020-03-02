@@ -50,7 +50,7 @@ def makeData(postlist_json):
     content = postlist_json['content']
     createdate = mil_to_date(postlist_json['created_at'])  # milisecond, long
     # print(i['photos'])
-    photos = str(getPhotoUrl(postlist_json['photos']))  # 사진의 url이 담긴 배열을 리턴
+    photos = getPhotoUrl(postlist_json['photos'])  # 사진의 url이 담긴 배열을 리턴
     # print("========================================")
 
     # print("작성자 : " + author)
