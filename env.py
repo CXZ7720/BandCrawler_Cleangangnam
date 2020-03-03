@@ -1,7 +1,10 @@
 import os
 
 def openenv():
-    return open(os.getcwd()+"/env", "r")
+    try:
+        return open(os.getcwd()+"/BandCrawler_Cleangangnam/env", "r") #Crontab 실행환경
+    except:
+        return open(os.getcwd() + "/env", "r") # 개발환경
 
 def getenv(file):
     env = {}
