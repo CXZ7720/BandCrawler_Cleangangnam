@@ -18,3 +18,13 @@ def parseAddress(content):
         return m
     else:
         return None
+
+def companyAuthor(author):
+    q = re.compile('(성진)|(상록수)|(웅비)|(하진)|(하남)|(로얄)|(태화)|(평원)|(동환특수)')# 예외조건
+    result = q.search(author)
+
+    if result:
+        print("Not our business : Author - " + result.group())
+        return False # 다른 업체에서 올린경우 처리 false
+    else:
+        return True
