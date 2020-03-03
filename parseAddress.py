@@ -5,7 +5,7 @@ def parseAddress(content):
     # @TODO : 정규표현식 개선필요.
     # p = re.compile(
         # '(((대치|삼성) ?(\d*?)? ?동) ?((\d*)? ?(-?) ?(\d*)?(번지)?))|(([가-힣]*(길|로)).(\d*.)?(길|로)?.(\d*).(\d*))|(고려.?.?)')
-    p = re.compile('(.대치.)|(.삼성.)|(.고려.)')
+    p = re.compile('(대치)|(삼성)|(봉은사)|(선릉)|(학동)|(도곡)|(영동대로)|(역삼로.?)|(테헤란로?)|(.고려.)')
     reg_res = p.search(content)
     if reg_res:
         m = reg_res.group()
