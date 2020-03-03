@@ -6,7 +6,7 @@ from datetime import datetime
 
 env_file = env.openenv()
 env_vars = env.getenv(env_file)
-print(env_vars['band_token'])
+# print(env_vars['band_token'])
 
 band_token = env_vars['band_token']
 
