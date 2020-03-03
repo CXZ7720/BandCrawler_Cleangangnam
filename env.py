@@ -1,5 +1,7 @@
+import os
+
 def openenv():
-    return open("env", "r")
+    return open(os.getcwd()+"/env", "r")
 
 def getenv(file):
     env = {}
