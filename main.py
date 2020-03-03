@@ -34,9 +34,7 @@ def main():
                 print(photos)
                 if len(photos) > 0:
                     try :
-                        for i in range(len(photos)):
-                            print(photos[i])
-                            bot.sendImage(photos[i])
+                        bot.sendImage(photos)
                     except:
                         print("Timeout")
                 db.afterSend(postkey)
