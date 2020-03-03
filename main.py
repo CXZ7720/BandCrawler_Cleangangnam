@@ -40,9 +40,6 @@ def main():
                     except:
                         print("Timeout")
                 db.afterSend(postkey)
-            # @TODO parsed_address를 이용한 kakao locla API 검색
-            # @TODO 검색 결과를 카카오톡 API를 이용하여 전송
-            # @TODO 전송 완료후 DB 1로 업데이트
 
 
 main()
