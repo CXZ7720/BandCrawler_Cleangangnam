@@ -2,7 +2,7 @@ import bandCrawler as bc
 import parseAddress as parse
 import db
 import bot
-import re
+import time
 
 
 def main():
@@ -40,5 +40,6 @@ def main():
                     except:
                         print("Timeout")
                 db.afterSend(postkey)
+        time.sleep(20) # 사진이 텔레그렘 서버에서 전송완료되는동안 기다려서 텍스트가 먼저 올라가는 현상을 막음.
 
 main()
