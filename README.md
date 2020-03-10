@@ -35,4 +35,4 @@ requirement.txt 에 필요한 pip 패키지가 기술되어 있습니다.
 
 
 그밖의 코드에 대한 간단한 설명 및 동작양상 : 
-[Naver Band 키워드알림 챗봇 제작기](https://zerogyun.dev/python/chatbot/2020/03/03/Naver-Band-%ED%81%AC%EB%A1%A4%EB%9F%AC-%EC%A0%9C%EC%9E%91%EA%B8%B0.html)
+[Naver Band 키워드알림 챗봇 제작기](https://zerogyun.dev/2020/03/03/Naver-Band-%ED%81%AC%EB%A1%A4%EB%9F%AC-%EC%A0%9C%EC%9E%91%EA%B8%B0/)
