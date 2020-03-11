@@ -5,10 +5,7 @@ import json
 from datetime import datetime
 
 env_file = env.openenv()
-if env_file is not None:
-    env_vars = env.getenv(env_file)  # for local machine
-else:
-    env_vars = env.getenv()  # for github workflow
+env_vars = env.getenv(env_file)
 # print(env_vars['band_token'])
 
 band_token = env_vars['band_token']
