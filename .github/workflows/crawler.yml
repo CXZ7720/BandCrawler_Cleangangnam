@@ -24,8 +24,8 @@ jobs:
         pip install -r requirement.txt
     - name: execute
       env:
-        TELEGRAM_TOKEN: ${{ secrets.telegram_token }} 
-        band_token: ${{ secrets.band_token }} 
+        telegram_token: ${{ secrets.telegram_token }}
+        band_token: ${{ secrets.band_token }}
         channel_id: ${{ secrets.channel_id }}  
         db_name: ${{ secrets.db_name }} 
         db_user: ${{ secrets.db_user }} 
