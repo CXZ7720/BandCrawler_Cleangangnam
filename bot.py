@@ -2,8 +2,7 @@ import env
 import telegram
 
 
-env_file = env.openenv()
-env_vars = env.getenv(env_file)
+env_vars = env.getenv()
 telegram_token = env_vars['telegram_token']
 channel_id = env_vars['channel_id']
 
